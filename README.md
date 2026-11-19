@@ -1,6 +1,6 @@
 # ql-scripts-js
 
-青龙 / 呆呆 / Arcadia 可用的 **JS 脚本集**（当前 10 个脚本）。收录 `smallfawn/QLScriptPublic` 最近更新的脚本，并把其中最近一次改动的 Python 脚本移植为 JS。
+青龙 / 呆呆 / Arcadia 可用的 **JS 脚本集**（主库 10 个脚本 + `yyb-go/` 合集 76 个）。收录 `smallfawn/QLScriptPublic` 最近更新的脚本，并把其中最近一次改动的 Python 脚本移植为 JS。
 
 ## 收录清单
 
@@ -18,6 +18,10 @@
 | `wxapp/pddgy-gzh.js` | 2026-09-02 | 拼多多果园公众号版参数区分 | 上游 JS，原样收录（原文件名 `pddgy-公众号版.js`） |
 
 `lib/env.js`、`lib/sendNotify.js`、`lib/wcs.js` 是上述脚本的公共依赖，放在白名单之外，不会被青龙当成任务创建。
+
+## YYB_GO 合集（可选）
+
+`yyb-go/` 收录 63 个 JavaScript + 13 个 Python，统一使用 `YYB_GO=地址@openid` 直接调用 YYB-Go 的 `/wxapp/getCode`，不依赖 `lib/wcs.js`。默认订阅白名单 `^(wxapp|daily)/` 不会拉取，启用方法、依赖和注意事项见 [`yyb-go/README.md`](./yyb-go/README.md)。
 
 ## 拉库
 
