@@ -1,5 +1,6 @@
 /*
 爱玛会员俱乐部 - 自动签到脚本
+cron: 20 8 * * *
 变量名：aima
 变量值：账号标识/openid（支持多账号，用 & 或换行分隔）
 CODE登录依赖：wx_server_url、wx_auth
