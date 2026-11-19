@@ -22,7 +22,7 @@
 ## 拉库
 
 ```bash
-ql repo "https://github.com/wanxian11/ql-scripts-js.git" "^(wxapp|daily)/" "" "" "main" "js"
+ql repo "https://github.com/wanxian11/ql-scripts-js.git" "^(wxapp|daily)/" "" "^lib/" "main" "js"
 ```
 
 或在青龙「订阅管理」中填：
@@ -30,6 +30,7 @@ ql repo "https://github.com/wanxian11/ql-scripts-js.git" "^(wxapp|daily)/" "" ""
 - 链接：`https://github.com/wanxian11/ql-scripts-js.git`
 - 分支：`main`
 - 白名单：`^(wxapp|daily)/`
+- 依赖文件：`^lib/`（公共库只复制，不建任务）
 - 文件后缀：`js`
 - 定时规则：`0 4 * * *`
 
@@ -60,7 +61,13 @@ ql repo "https://github.com/wanxian11/ql-scripts-js.git" "^(wxapp|daily)/" "" ""
 npm install -g axios
 ```
 
-青龙「依赖管理」里装 Node 依赖 `axios` 即可。
+青龙「依赖管理」里装 Node 依赖 `axios`；或直接装到脚本根目录：
+
+```bash
+cd /ql/data/scripts && npm install axios
+```
+
+`lib/wcs.js` 和四个上游脚本都依赖 `axios`，缺了会报 `Cannot find module 'axios'`。
 
 ## 目录结构
 
