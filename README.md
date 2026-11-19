@@ -12,19 +12,19 @@
 | `daily/yht.js` | 2026-10-14 | 益禾堂：修改签到 token 取值和签到活动 ID | 上游 JS，原样收录 |
 | `wxapp/bjhqbwz.js` | 2026-08-17 | bjhqbwz 会话失效走 HTTP 401 时进不去重登分支 | **由 `bjhqbwz.py` 移植为 JS** |
 
-`tools/env.js`、`tools/sendNotify.js`、`wxapp/wcs.js` 是上述脚本的公共依赖。
+`lib/env.js`、`lib/sendNotify.js`、`lib/wcs.js` 是上述脚本的公共依赖，放在白名单之外，不会被青龙当成任务创建。
 
 ## 拉库
 
 ```bash
-ql repo "https://github.com/wanxian11/ql-scripts-js.git" "^(wxapp|daily|tools)/" "" "" "main" "js"
+ql repo "https://github.com/wanxian11/ql-scripts-js.git" "^(wxapp|daily)/" "" "" "main" "js"
 ```
 
 或在青龙「订阅管理」中填：
 
 - 链接：`https://github.com/wanxian11/ql-scripts-js.git`
 - 分支：`main`
-- 白名单：`^(wxapp|daily|tools)/`
+- 白名单：`^(wxapp|daily)/`
 - 文件后缀：`js`
 - 定时规则：`0 4 * * *`
 
@@ -64,9 +64,10 @@ ql-scripts-js/
 │   └── wcs.js
 ├── daily/
 │   └── yht.js
-└── tools/
+└── lib/
     ├── env.js
-    └── sendNotify.js
+    ├── sendNotify.js
+    └── wcs.js
 ```
 
 ## bjhqbwz.js 移植说明

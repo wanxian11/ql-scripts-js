@@ -22,12 +22,12 @@ wx_auth        必填，wx_server 鉴权值
 ------------------------------------------
 */
 
-const { Env } = require("../tools/env.js");
+const { Env } = require("../lib/env.js");
 const $ = new Env("旧衣客签到");
 const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
-const WeChatServer = require("./wcs.js");
+const WeChatServer = require("../lib/wcs.js");
 
 const ckName = "jyk";
 const MINI_APP_ID = "wx3f0209cc35a953a4";

@@ -14,13 +14,13 @@ wx_auth        必填，wx_server 鉴权值
 ------------------------------------------
 */
 
-const { Env } = require("../tools/env.js");
+const { Env } = require("../lib/env.js");
 const $ = new Env("麦富迪会员签到");
 const axios = require("axios");
 const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
-const WeChatServer = require("./wcs.js");
+const WeChatServer = require("../lib/wcs.js");
 
 const MINI_APP_ID = "wx278a2ed79c5182f8";
 const API_BASE = "https://cdp.myfoodiepet.com";

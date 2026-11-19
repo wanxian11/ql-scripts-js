@@ -12,7 +12,7 @@
 window = {}
 const {
     Env
-} = require("../tools/env")
+} = require("../lib/env")
 const $ = new Env("益禾堂");
 let ckName = `yht`;
 const strSplitor = "#";
